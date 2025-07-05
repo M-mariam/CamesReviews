@@ -1,4 +1,3 @@
-export{}
 const emailInput = document.querySelector<HTMLInputElement>('#email');
 const passwordInput = document.querySelector<HTMLInputElement>('#password');
 const logInbtn = document.querySelector<HTMLButtonElement>('#login');
@@ -28,7 +27,7 @@ function signIn(): void {
   }
 
   if (isCorrectEmailAndPassword(emailInput.value, passwordInput.value)) {
-    window.location.href = "home.html";
+    window.location.href = "games.html";
   } else {
     msg.textContent = "Incorrect email or password";
     msg.style.cssText = "color: red !important";
@@ -39,6 +38,7 @@ function isCorrectEmailAndPassword(email: string, password: string): boolean {
   for (const user of users) {
     if (user.email === email && user.password === password) {
       localStorage.setItem("userName", user.name);
+      // window.location.href = "games.html";
       return true;
     }
   }

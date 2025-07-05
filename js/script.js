@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var emailInput = document.querySelector('#email');
 var passwordInput = document.querySelector('#password');
 var logInbtn = document.querySelector('#login');
@@ -20,7 +18,7 @@ function signIn() {
         return;
     }
     if (isCorrectEmailAndPassword(emailInput.value, passwordInput.value)) {
-        window.location.href = "home.html";
+        window.location.href = "games.html";
     }
     else {
         msg.textContent = "Incorrect email or password";
@@ -32,6 +30,7 @@ function isCorrectEmailAndPassword(email, password) {
         var user = users_1[_i];
         if (user.email === email && user.password === password) {
             localStorage.setItem("userName", user.name);
+            // window.location.href = "games.html";
             return true;
         }
     }
